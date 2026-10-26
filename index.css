@@ -1,0 +1,858 @@
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Playfair+Display:wght@600;700;800&display=swap');
+
+:root {
+    --paper: #f3ead8;
+    --ink: #25251f;
+    --red: #a43e32;
+    --blue: #526b7a;
+    --muted: #777164;
+    --line: rgba(37, 37, 31, 0.2);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 28px 14px;
+    background: #d4ccbc;
+    color: var(--ink);
+    font-family: Georgia, serif;
+}
+
+button {
+    font: inherit;
+}
+
+.poster {
+    position: relative;
+    width: min(100%, 760px);
+    margin: auto;
+    padding: 40px clamp(20px, 5vw, 52px) 25px;
+    overflow: hidden;
+    background:
+        radial-gradient(ellipse at 15% 10%, rgba(255,255,255,.7), transparent 35%),
+        repeating-linear-gradient(
+            0deg,
+            transparent,
+            transparent 4px,
+            rgba(91, 73, 43, 0.018) 5px
+        ),
+        var(--paper);
+    box-shadow: 0 12px 38px rgba(40, 35, 26, 0.2);
+    border: 1px solid rgba(70, 55, 35, 0.18);
+}
+
+.poster::before {
+    content: "";
+    position: absolute;
+    inset: 12px;
+    border: 1px solid rgba(74, 61, 43, 0.18);
+    pointer-events: none;
+}
+
+.top {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+}
+
+.eyebrow,
+.card-label,
+.photo-caption,
+.element small,
+.element-number,
+.nobel-stamp small,
+.timeline-mark,
+.section-number,
+.note-hint,
+.modal-top,
+.modal-number,
+.modal-bottom,
+.footer {
+    font-family: "DM Mono", monospace;
+    letter-spacing: 0.09em;
+}
+
+.eyebrow {
+    margin: 0 0 10px;
+    color: var(--red);
+    font-size: 10px;
+}
+
+h1 {
+    margin: 0;
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: clamp(54px, 10vw, 86px);
+    line-height: 0.82;
+    letter-spacing: -0.065em;
+}
+
+h1 span {
+    color: var(--red);
+}
+
+.subtitle {
+    margin: 15px 0 7px;
+    font-size: 16px;
+    font-style: italic;
+}
+
+.years {
+    display: inline-block;
+    padding: 5px 14px;
+    border-top: 1px solid var(--ink);
+    border-bottom: 1px solid var(--ink);
+    font-family: "DM Mono", monospace;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+}
+
+.collage {
+    position: relative;
+    min-height: 390px;
+    margin: 27px 0 30px;
+}
+
+.portrait-frame {
+    position: absolute;
+    top: 15px;
+    left: 50%;
+    width: min(54%, 300px);
+    padding: 10px 10px 14px;
+    background: #fffaf0;
+    box-shadow: 2px 7px 17px rgba(35, 29, 22, 0.22);
+    transform: translateX(-50%) rotate(-2deg);
+    z-index: 2;
+}
+
+.portrait {
+    display: block;
+    width: 100%;
+    height: 275px;
+    object-fit: cover;
+    object-position: center 28%;
+    filter: grayscale(100%) contrast(1.05) sepia(12%);
+}
+
+.photo-caption {
+    margin: 10px 0 0;
+    text-align: center;
+    font-size: 8px;
+}
+
+.tape {
+    position: absolute;
+    z-index: 3;
+    width: 75px;
+    height: 19px;
+    background: rgba(201, 170, 107, 0.55);
+}
+
+.tape-one {
+    top: 7px;
+    left: 20%;
+    transform: rotate(-25deg);
+}
+
+.tape-two {
+    top: 8px;
+    right: 18%;
+    transform: rotate(28deg);
+}
+
+.element {
+    position: absolute;
+    z-index: 4;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 82px;
+    height: 92px;
+    border: 1.5px solid var(--ink);
+    background: #d8e0d1;
+    box-shadow: 3px 4px 0 rgba(37, 37, 31, 0.13);
+}
+
+.element strong {
+    font-size: 36px;
+    line-height: 1;
+}
+
+.element-number {
+    align-self: flex-start;
+    margin-left: 9px;
+    font-size: 10px;
+}
+
+.element small {
+    margin-top: 5px;
+    font-size: 8px;
+}
+
+.element-po {
+    top: 57px;
+    left: 4%;
+    transform: rotate(-8deg);
+}
+
+.element-ra {
+    right: 4%;
+    bottom: 50px;
+    background: #e7d3ca;
+    transform: rotate(7deg);
+}
+
+.scribble {
+    position: absolute;
+    color: var(--red);
+    font-family: Georgia, serif;
+}
+
+.scribble-star {
+    top: 15px;
+    right: 9%;
+    font-size: 45px;
+    transform: rotate(12deg);
+}
+
+.scribble-plus {
+    bottom: 38px;
+    left: 12%;
+    font-size: 44px;
+    transform: rotate(-10deg);
+}
+
+.scribble-orbit {
+    right: 12%;
+    top: 125px;
+    font-size: 42px;
+    color: var(--blue);
+}
+
+.fact-card {
+    position: absolute;
+    bottom: 2px;
+    left: 8%;
+    z-index: 4;
+    width: 48%;
+    padding: 14px 16px;
+    background: #e8dfc9;
+    border-left: 3px solid var(--red);
+    box-shadow: 2px 4px 10px rgba(40, 35, 26, 0.12);
+    transform: rotate(-3deg);
+}
+
+.card-label {
+    color: var(--red);
+    font-size: 8px;
+}
+
+.fact-card p {
+    margin: 8px 0 0;
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 14px;
+    line-height: 1.45;
+}
+
+.nobel-stamp {
+    position: absolute;
+    top: 230px;
+    right: 7%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 82px;
+    height: 82px;
+    border: 2px dashed var(--red);
+    border-radius: 50%;
+    color: var(--red);
+    transform: rotate(10deg);
+}
+
+.nobel-stamp span {
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.nobel-stamp small {
+    text-align: center;
+    font-size: 7px;
+    line-height: 1.5;
+}
+
+.timeline-mark {
+    position: absolute;
+    top: 45%;
+    left: 4%;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--blue);
+    font-size: 10px;
+    transform: rotate(-90deg);
+    transform-origin: left center;
+}
+
+.timeline-line {
+    width: 27px;
+    height: 1px;
+    background: var(--blue);
+}
+
+.facts-section,
+.interactive-section {
+    position: relative;
+    z-index: 1;
+    margin-top: 25px;
+}
+
+.section-heading {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    padding-bottom: 9px;
+    border-bottom: 1px solid var(--ink);
+}
+
+.section-number {
+    color: var(--red);
+    font-size: 10px;
+}
+
+.section-heading h2 {
+    margin: 0;
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 20px;
+    letter-spacing: 0.015em;
+}
+
+.facts-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0 22px;
+}
+
+.fact {
+    display: flex;
+    gap: 11px;
+    padding: 15px 0;
+    border-bottom: 1px dashed var(--line);
+}
+
+.fact-icon {
+    flex: 0 0 25px;
+    color: var(--red);
+    font-size: 22px;
+}
+
+.fact h3 {
+    margin: 2px 0 6px;
+    font-family: "DM Mono", monospace;
+    font-size: 10px;
+    line-height: 1.5;
+}
+
+.fact p {
+    margin: 0;
+    color: #504b41;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.section-intro {
+    margin: 12px 0 16px;
+    color: #5e584c;
+    font-size: 14px;
+    font-style: italic;
+    line-height: 1.5;
+}
+
+.notes-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 13px;
+}
+
+.note {
+    position: relative;
+    display: flex;
+    min-height: 140px;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 14px 12px;
+    border: 0;
+    border-top: 3px solid rgba(37, 37, 31, 0.6);
+    color: var(--ink);
+    text-align: left;
+    cursor: pointer;
+    box-shadow: 2px 4px 8px rgba(40, 35, 26, 0.1);
+    transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.note:nth-child(3n + 1) {
+    transform: rotate(-1.5deg);
+}
+
+.note:nth-child(3n + 2) {
+    transform: rotate(1.3deg);
+}
+
+.note:nth-child(3n) {
+    transform: rotate(-0.5deg);
+}
+
+.note:hover,
+.note:focus-visible {
+    transform: translateY(-5px) rotate(0);
+    box-shadow: 3px 8px 12px rgba(40, 35, 26, 0.16);
+}
+
+.note:focus-visible,
+.close-button:focus-visible {
+    outline: 2px solid var(--red);
+    outline-offset: 3px;
+}
+
+.note-yellow {
+    background: #eee0a9;
+}
+
+.note-pink {
+    background: #e8c8c1;
+}
+
+.note-blue {
+    background: #cbdbe0;
+}
+
+.note-green {
+    background: #d3dec7;
+}
+
+.note-purple {
+    background: #d9d0e5;
+}
+
+.note-orange {
+    background: #efd0aa;
+}
+
+.note-number {
+    font-family: "DM Mono", monospace;
+    font-size: 10px;
+}
+
+.note-symbol {
+    align-self: flex-end;
+    margin-top: -5px;
+    font-size: 26px;
+}
+
+.note strong {
+    margin-top: auto;
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 16px;
+    line-height: 1.2;
+}
+
+.note-hint {
+    margin-top: 9px;
+    font-size: 8px;
+    line-height: 1.5;
+}
+
+.quote {
+    position: relative;
+    margin: 35px 0 25px;
+    padding: 20px 23px 17px;
+    border-top: 1px solid var(--ink);
+    border-bottom: 1px solid var(--ink);
+    text-align: center;
+}
+
+.quote-mark {
+    display: block;
+    height: 30px;
+    color: var(--red);
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 50px;
+    line-height: 1;
+}
+
+.quote p {
+    margin: 5px 0 10px;
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: clamp(17px, 3vw, 23px);
+    font-style: italic;
+    line-height: 1.45;
+}
+
+.quote cite {
+    color: var(--muted);
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    color: var(--muted);
+    font-size: 8px;
+    line-height: 1.7;
+}
+
+/* Интерактивна хартиена бележка */
+
+.modal[hidden] {
+    display: none !important;
+}
+
+.modal {
+    position: absolute;
+    inset: 0;
+    z-index: 20;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 22px;
+}
+
+.modal-backdrop {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    background: rgba(35, 30, 22, 0.35);
+    cursor: pointer;
+}
+
+.modal-card {
+    position: relative;
+    z-index: 1;
+    width: min(100%, 410px);
+    max-height: calc(100% - 20px);
+    overflow-y: auto;
+    padding: 22px 22px 17px;
+    background:
+        repeating-linear-gradient(
+            transparent,
+            transparent 29px,
+            rgba(83, 105, 123, 0.12) 30px
+        ),
+        #fff9eb;
+    border-top: 5px solid #c4a96d;
+    box-shadow: 5px 10px 28px rgba(0, 0, 0, 0.22);
+    transform: rotate(-1deg);
+    animation: note-appear 180ms ease-out;
+}
+
+@keyframes note-appear {
+    from {
+        opacity: 0;
+        transform: translateY(10px) rotate(-3deg);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) rotate(-1deg);
+    }
+}
+
+.modal-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    color: var(--red);
+    font-size: 8px;
+    line-height: 1.5;
+}
+
+.close-button {
+    flex: 0 0 32px;
+    width: 32px;
+    height: 32px;
+    border: 1px solid var(--line);
+    border-radius: 50%;
+    background: transparent;
+    color: var(--ink);
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.modal-number {
+    display: block;
+    margin-top: 14px;
+    color: var(--blue);
+    font-size: 11px;
+}
+
+.modal-card h2 {
+    margin: 8px 0 13px;
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: clamp(24px, 5vw, 32px);
+    line-height: 1.2;
+}
+
+.modal-card p {
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.9;
+    white-space: pre-line;
+}
+
+.modal-bottom {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    padding-top: 10px;
+    border-top: 1px dashed var(--line);
+    color: var(--muted);
+    font-size: 8px;
+}
+
+/* Таблети и телефони */
+
+@media (max-width: 560px) {
+    body {
+        padding: 10px 6px;
+    }
+
+    .poster {
+        padding: 30px 20px 20px;
+    }
+
+    .poster::before {
+        inset: 7px;
+    }
+
+    .collage {
+        min-height: 340px;
+        margin-top: 22px;
+        margin-bottom: 22px;
+    }
+
+    .portrait-frame {
+        top: 25px;
+        width: 56%;
+        padding: 7px 7px 11px;
+    }
+
+    .portrait {
+        height: 230px;
+    }
+
+    .element {
+        width: 65px;
+        height: 76px;
+    }
+
+    .element strong {
+        font-size: 29px;
+    }
+
+    .element small {
+        font-size: 7px;
+    }
+
+    .element-po {
+        top: 66px;
+        left: 1%;
+    }
+
+    .element-ra {
+        right: 1%;
+        bottom: 50px;
+    }
+
+    .fact-card {
+        left: 3%;
+        bottom: 0;
+        width: 54%;
+        padding: 10px 11px;
+    }
+
+    .fact-card p {
+        font-size: 12px;
+    }
+
+    .nobel-stamp {
+        top: 220px;
+        right: 3%;
+        width: 65px;
+        height: 65px;
+    }
+
+    .nobel-stamp span {
+        font-size: 22px;
+    }
+
+    .nobel-stamp small {
+        font-size: 6px;
+    }
+
+    .scribble-star {
+        right: 5%;
+        font-size: 34px;
+    }
+
+    .scribble-orbit {
+        right: 6%;
+        top: 130px;
+        font-size: 30px;
+    }
+
+    .scribble-plus {
+        left: 5%;
+        bottom: 30px;
+        font-size: 32px;
+    }
+
+    .timeline-mark {
+        left: 1%;
+        font-size: 8px;
+    }
+
+    .section-heading h2 {
+        font-size: 17px;
+    }
+
+    .facts-grid {
+        gap: 0 13px;
+    }
+
+    .fact {
+        gap: 7px;
+    }
+
+    .fact-icon {
+        flex-basis: 19px;
+        font-size: 18px;
+    }
+
+    .fact h3 {
+        font-size: 9px;
+    }
+
+    .fact p {
+        font-size: 12px;
+    }
+
+    .notes-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .note {
+        min-height: 130px;
+        padding: 12px 10px;
+    }
+
+    .note strong {
+        font-size: 15px;
+    }
+
+    .footer {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .modal {
+        padding: 14px;
+    }
+
+    .modal-card {
+        padding: 17px;
+    }
+
+    .modal-card p {
+        font-size: 14px;
+        line-height: 1.8;
+    }
+}
+
+@media (max-width: 360px) {
+    .poster {
+        padding-right: 14px;
+        padding-left: 14px;
+    }
+
+    .collage {
+        min-height: 310px;
+    }
+
+    .portrait-frame {
+        width: 57%;
+    }
+
+    .portrait {
+        height: 205px;
+    }
+
+    .element {
+        width: 56px;
+        height: 67px;
+    }
+
+    .element strong {
+        font-size: 25px;
+    }
+
+    .element-po {
+        left: 0;
+    }
+
+    .element-ra {
+        right: 0;
+        bottom: 40px;
+    }
+
+    .fact-card {
+        width: 58%;
+    }
+
+    .fact-card p {
+        font-size: 11px;
+    }
+
+    .nobel-stamp {
+        right: 0;
+        top: 205px;
+        width: 57px;
+        height: 57px;
+    }
+
+    .facts-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .note strong {
+        font-size: 14px;
+    }
+
+    .modal-card h2 {
+        font-size: 23px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+}
