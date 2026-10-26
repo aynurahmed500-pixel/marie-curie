@@ -1,13 +1,14 @@
 
 @import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Playfair+Display:wght@600;700;800&display=swap');
 
+
 :root {
     --paper: #f3ead8;
-    --ink: #25251f;
-    --red: #a43e32;
-    --blue: #526b7a;
+    --ink: #252b32;
+    --red: #426b8a;
+    --blue: #526f89;
     --muted: #777164;
-    --line: rgba(37, 37, 31, 0.2);
+    --line: rgba(37, 43, 50, 0.2);
 }
 
 * {
@@ -212,7 +213,7 @@ h1 span {
 
 .scribble {
     position: absolute;
-    color: var(--red);
+    color: var(--blue);
     font-family: Georgia, serif;
 }
 
@@ -245,13 +246,13 @@ h1 span {
     width: 48%;
     padding: 14px 16px;
     background: #e8dfc9;
-    border-left: 3px solid var(--red);
+    border-left: 3px solid var(--blue);
     box-shadow: 2px 4px 10px rgba(40, 35, 26, 0.12);
     transform: rotate(-3deg);
 }
 
 .card-label {
-    color: var(--red);
+    color: var(--blue);
     font-size: 13px;
 }
 
@@ -272,7 +273,7 @@ h1 span {
     justify-content: center;
     width: 82px;
     height: 82px;
-    border: 2px dashed var(--red);
+    border: 2px dashed var(--blue);
     border-radius: 50%;
     color: var(--red);
     transform: rotate(10deg);
@@ -575,7 +576,7 @@ h1 span {
     align-items: center;
     justify-content: space-between;
     gap: 12px;
-    color: var(--red);
+    color: var(--blue);
     font-size: 10px;
     line-height: 1.5;
 }
