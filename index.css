@@ -83,7 +83,7 @@ button {
 .eyebrow {
     margin: 0 0 10px;
     color: var(--red);
-    font-size: 10px;
+    font-size: 14px;
 }
 
 h1 {
@@ -194,7 +194,7 @@ h1 span {
 
 .element small {
     margin-top: 5px;
-    font-size: 8px;
+    font-size: 11px;
 }
 
 .element-po {
@@ -252,7 +252,7 @@ h1 span {
 
 .card-label {
     color: var(--red);
-    font-size: 8px;
+    font-size: 13px;
 }
 
 .fact-card p {
@@ -326,7 +326,7 @@ h1 span {
 
 .section-number {
     color: var(--red);
-    font-size: 10px;
+    font-size: 12px;
 }
 
 .section-heading h2 {
@@ -358,14 +358,14 @@ h1 span {
 .fact h3 {
     margin: 2px 0 6px;
     font-family: "DM Mono", monospace;
-    font-size: 10px;
+    font-size: 13px;
     line-height: 1.5;
 }
 
 .fact p {
     margin: 0;
     color: #504b41;
-    font-size: 13px;
+    font-size: 14px;
     line-height: 1.5;
 }
 
@@ -508,7 +508,7 @@ h1 span {
     justify-content: space-between;
     gap: 12px;
     color: var(--muted);
-    font-size: 8px;
+    font-size: 11px;
     line-height: 1.7;
 }
 
@@ -576,7 +576,7 @@ h1 span {
     justify-content: space-between;
     gap: 12px;
     color: var(--red);
-    font-size: 8px;
+    font-size: 10px;
     line-height: 1.5;
 }
 
@@ -596,7 +596,7 @@ h1 span {
     display: block;
     margin-top: 14px;
     color: var(--blue);
-    font-size: 11px;
+    font-size: 12px;
 }
 
 .modal-card h2 {
@@ -620,7 +620,7 @@ h1 span {
     padding-top: 10px;
     border-top: 1px dashed var(--line);
     color: var(--muted);
-    font-size: 8px;
+    font-size: 10px;
 }
 
 /* Таблети и телефони */
@@ -664,7 +664,7 @@ h1 span {
     }
 
     .element small {
-        font-size: 7px;
+        font-size: 9px;
     }
 
     .element-po {
@@ -700,7 +700,7 @@ h1 span {
     }
 
     .nobel-stamp small {
-        font-size: 6px;
+        font-size: 8px;
     }
 
     .scribble-star {
@@ -722,7 +722,7 @@ h1 span {
 
     .timeline-mark {
         left: 1%;
-        font-size: 8px;
+        font-size: 9px;
     }
 
     .section-heading h2 {
@@ -743,7 +743,7 @@ h1 span {
     }
 
     .fact h3 {
-        font-size: 9px;
+        font-size: 10px;
     }
 
     .fact p {
