@@ -60,7 +60,7 @@ function openTopic(button) {
 
     modalTitle.textContent = topic.title;
     modalText.textContent = topic.text;
-    modalLabel.textContent = "МАРИЯ КЮРИ · ЛИЧНИ БЕЛЕЖКИ";
+    modalLabel.textContent = "МАРИЯ КЮРИ · БЕЛЕЖКИ";
     modalNumber.textContent = `БЕЛЕЖКА № ${topic.number}`;
 
     topicButtons.forEach(item => {
